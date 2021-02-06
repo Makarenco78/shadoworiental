@@ -19,9 +19,13 @@ require("config.php");
 	<link rel="shortcut icon" href="img/favicon.png" type="image/png" />
 	<title><?php echo $site["title"]; ?></title>
 </head>
+
+
 <?php
 
-if(!empty($_POST["password"]) && !empty($_POST["password2"]) && !empty($_POST["email"]) ){
+$texto_aleatorio = generateRandomString();
+
+if(!empty($_POST["password"]) && !empty($_POST["password2"]) && !empty($_POST["email"]) && !empty($_POST["captcha"]) && !empty($_POST["captcha_verif"]) ){
 
 	$conn = mysqli_connect($sql_host, $sql_user, $sql_pass, $sql_account_db) or die("Unable to connect to the database.");
 
@@ -29,6 +33,8 @@ if(!empty($_POST["password"]) && !empty($_POST["password2"]) && !empty($_POST["e
 	$post_password = mysqli_real_escape_string($conn, trim(strtoupper($_POST["password"])));
 	$post_password2 = trim(strtoupper($_POST["password2"]));
 	$post_email = mysqli_real_escape_string($conn, trim(strtoupper($_POST["email"])));
+	$post_captcha = mysqli_real_escape_string($conn, trim(strtoupper($_POST["captcha"])));
+	$post_captcha_verif = mysqli_real_escape_string($conn, trim(strtoupper($_POST["captcha_verif"])));
 	
 	//sha1( email, password)
 	$post_password_final = mysqli_real_escape_string($conn, SHA1("".$post_email.":".$post_password.""));
@@ -50,6 +56,8 @@ if(!empty($_POST["password"]) && !empty($_POST["password2"]) && !empty($_POST["e
 	$post_expansion = 8;
 	
 	if($post_password != $post_password2) { $errors[] = "El passwords y la confirmación no coinciden."; }
+	
+	if($post_captcha != $post_captcha_verif) { $errors[] = "Error de captcha."; }
 	
 	$arroba   = '@';
 	
@@ -105,7 +113,7 @@ if(!empty($_POST["password"]) && !empty($_POST["password2"]) && !empty($_POST["e
 		mysqli_query($conn, $sqlinsertacc) or die(mysqli_error($conn));
 		
 	
-	$errors[] = '<p class="texto cyan">Se ha creado correctamente la cuenta Battlenet '.$post_email.'<p>';  
+	$errors[] = '<p class="texto cyan sm">Se ha creado correctamente la cuenta Battlenet '.$post_email.'<p>';  
 	}
 	
 	mysqli_close($conn);
@@ -122,14 +130,41 @@ function error_msg(){
 
 ?>
  <script type="text/javascript">
- function checkform ( form )
- {
-	if (form.password.value == "") { alert( "Debes ingresar el password." ); form.password.focus(); return false; } else { if (form.password.value.length < 6) { alert( "La contraseña es demasiado corta!" ); form.password.focus(); return false; } }
-	if (form.password2.value == "") { alert( "Debes ingresar el password." ); form.password2.focus(); return false; }
-	if (form.password.value != form.password2.value) { alert( "El password y la confirmacion no coinciden." ); form.password.focus(); return false; }
-	if (form.email.value == "") { alert( "Debes ingresar el e-mail." ); form.email.focus(); return false; } else { if (form.email.value.length < 8) { alert( "Az email címed túl rövid!" ); form.email.focus(); return false; } }
-	return true ;
- }
+
+	function no_robot()
+	{
+		document.getElementById("captcha_verif").value = document.getElementById("captcha").value;
+
+		function sleep (time) {
+  			return new Promise((resolve) => setTimeout(resolve, time));
+		}
+
+		// Usage!
+		sleep(1000).then(() => {
+    		// Do something after the sleep!
+			//var elem = document.querySelector('#selector');
+			document.getElementById("selector").disabled = true;
+			document.getElementById("check").disabled = true;
+			document.getElementById("slider").disabled = true;
+			//elem.parentNode.removeChild(elem);
+
+			//var elem = document.querySelector('#check');
+			//elem.parentNode.removeChild(elem);
+
+			//var elem = document.querySelector('#slider');
+			//elem.parentNode.removeChild(elem);
+		});
+	}
+
+	function checkform ( form )
+	{
+		if (form.password.value == "") { alert( "Debes ingresar el password." ); form.password.focus(); return false; } else { if (form.password.value.length < 6) { alert( "La contraseña es demasiado corta!" ); form.password.focus(); return false; } }
+		if (form.password2.value == "") { alert( "Debes ingresar el password." ); form.password2.focus(); return false; }
+		if (form.password.value != form.password2.value) { alert( "El password y la confirmacion no coinciden." ); form.password.focus(); return false; }
+		if (form.captcha.value != form.captcha_verif.value) { alert( "Debes activar el captcha" ); form.password.focus(); return false; }
+		if (form.email.value == "") { alert( "Debes ingresar el e-mail." ); form.email.focus(); return false; } else { if (form.email.value.length < 8) { alert( "Az email címed túl rövid!" ); form.email.focus(); return false; } }
+		return true ;
+	}
  </script>
  <body class="registro">
  
@@ -145,24 +180,30 @@ function error_msg(){
 		<h3 class="texto cyan sm">ejemplo: usuario@email</h3>
 		<?php error_msg(); ?>
 
-		<label class="texto teal md" for="mail">E-mail</label>
+		<label class="texto teal sm" for="mail">E-mail</label>
 		<input id="mail" name="email" type="email" placeholder="username@email" maxlength="35" /><br>
 		
-		<label class="texto teal md" for="pass">Password</label>
+		<label class="texto teal sm" for="pass">Password</label>
 		<input id="pass" name="password" type="password" placeholder="*********" maxlength="30" /><br>
 		
-		<label class="texto teal md" for="pass2">Confirmar password</label>
+		<label class="texto teal sm" for="pass2">Confirmar password</label>
 		<input id="pass2" name="password2" type="password" placeholder="*********" maxlength="30" /><br>
 		
-		<input type="submit" class="sbm" value="Registrar" />
+		<input id="captcha" name="captcha" type="hidden" value= <?php echo $texto_aleatorio?> /><br>
+		<input id="captcha_verif" name="captcha_verif" type="hidden" /><br>
 
-		<div id="link-descargas">
-			<a class="texto ocre md" href='descargas.php' target='_blank'>Descargas</a>
+
+		<div class="captcha">
+			<label id="selector" class="switch">
+				<input id="check" type="checkbox">
+				<a id="slider" class="slider round" onclick="no_robot()"></a>
+			</label>
 		</div>
+		<input type="submit" class="sbm" value="Registrar" />
 	</form>
 	
 	<div class="unete">
-		<a href="descargas.php"><img src="images/Unite.gif" width="500" height="300"></a>
+		<a href="descargas.php" target="_blank"><img src="images/Unite.gif" width="500" height="300"></a>
 	</div>
 </div>
 <?php include("pie.php");  ?>
