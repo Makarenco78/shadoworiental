@@ -1,16 +1,4 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-
-
-$mysql = array(
-
-	"host" => "localhost",
-	"username" => "root",
-	"password" => "ascent",
-	"realmd" => "sl_auth",
-);
 
 $site = array(
 
@@ -161,41 +149,6 @@ function _getFactionSTR($F){
 	}
 }
 
-
-function send_phpmailer($email, $subject, $message)
-{
-    try {
-        $mail = new PHPMailer(true);
-        if (get_config('debug_mode')) {
-            $mail->SMTPDebug = 2;
-        }
-        $mail->isSMTP();
-        $mail->Host = get_config('smtp_host');
-        $mail->SMTPAuth = get_config('smtp_auth');
-        $mail->Username = get_config('smtp_user');
-        $mail->Password = get_config('smtp_pass');
-        $mail->SMTPSecure = get_config('smtp_secure');
-        $mail->Port = get_config('smtp_port');
-
-        //Recipients
-        $mail->setFrom(get_config('smtp_mail'));
-        $mail->addAddress($email);     // Add a recipient
-        $mail->addReplyTo(get_config('smtp_mail'));
-
-        // Content
-        $mail->isHTML(true);
-        $mail->Subject = $subject;
-        $mail->Body = $message;
-
-        $mail->send();
-    }
-    catch(Exception $e) {
-        if (get_config('debug_mode')) {
-            echo 'Message: ' .$e->getMessage();
-        }
-    }
-    return true;
-}
 
 function generateRandomString($length = 10) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
