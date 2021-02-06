@@ -20,6 +20,10 @@
 	background-color: rgba(25, 20, 41, 0.8);
 }
 
+.center{
+	text-align: center;
+}
+
 
 /*colores*/
 .importante{color:#EEA700}
@@ -32,7 +36,7 @@
 
 .cyan{color: #00FFFF}
 .claro{color:#EEE}
-.rojo-suave{color: #FF3333}
+.rojo-suave{color: #AA3333}
 .ocre{color:#AA5}
 .teal{color:#25A5A5}
 

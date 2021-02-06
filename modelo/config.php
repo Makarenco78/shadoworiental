@@ -149,7 +149,6 @@ function _getFactionSTR($F){
 	}
 }
 
-
 function generateRandomString($length = 10) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
     $charactersLength = strlen($characters);

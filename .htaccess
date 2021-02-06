@@ -1,0 +1,29 @@
+#prevenir acceso a los archivos .htaccess
+<files .htaccess>
+order allow,deny
+deny from all
+</files>
+
+#Erro 404 redirigiendfo index
+#ErrorDocument 404 /index.php?action=inicio
+
+#denegar el acceso a un directorio
+#deny from all
+
+#evitar listado de directorios
+IndexIgnore *
+
+#Bloquear acceso desde determinadas IP
+#Order deny, allow
+#Allow from All
+#Deny from XXX.XXX.XXX.XXX
+#Deny from XXX.XXX.XXX.XXX
+
+#opción de descargar los archivos multimedia
+AddType application/octet-stream .mpg
+AddType application/octet-stream .mp3
+AddType application/octet-stream .mp4
+AddType application/octet-stream .gif
+AddType application/octet-stream .jpg
+AddType application/octet-stream .png
+

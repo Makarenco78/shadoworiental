@@ -1,27 +1,22 @@
-<?php
-//error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
-
-// https://wow.gamepedia.com/RaceId
-
-require("config.php");
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    
-	<meta http-equiv=”Content-Type” content=”text/html"; charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de cuentas</title>
-	<link rel="stylesheet" type="text/css" href="estilos.css" />
-	<link rel="stylesheet" type="text/css" href="site.css" />
+	
+	<meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inicio</title>
+	<link rel="stylesheet" type="text/css" href="../css/estilos.css" />
+	<link rel="stylesheet" type="text/css" href="../css/site.css" />
 	<meta name="description" content="<?php $site["meta_description"] ?>" />
-		
-	<link rel="shortcut icon" href="img/favicon.png" type="image/png" />
+
+	<link rel="shortcut icon" href="../images/favicon.png" type="image/png" />
 	<title><?php echo $site["title"]; ?></title>
 </head>
 
-
 <?php
+
+// https://wow.gamepedia.com/RaceId
+require_once("../modelo/config.php");
 
 $texto_aleatorio = generateRandomString();
 
@@ -113,7 +108,7 @@ if(!empty($_POST["password"]) && !empty($_POST["password2"]) && !empty($_POST["e
 		mysqli_query($conn, $sqlinsertacc) or die(mysqli_error($conn));
 		
 	
-	$errors[] = '<p class="texto cyan sm">Se ha creado correctamente la cuenta Battlenet '.$post_email.'<p>';  
+		$errors[] = '<p class="texto cyan sm">Se ha creado correctamente la cuenta '.$post_email.'<p>';  
 	}
 	
 	mysqli_close($conn);
@@ -166,45 +161,50 @@ function error_msg(){
 		return true ;
 	}
  </script>
- <body class="registro">
- 
- 
-<div>
-	<?php include ("menu.php");?> 
-</div> 
-<div class="container"> <!-- contenedor -->
-	<form class="formulario" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST" onsubmit="return checkform(reg);" name="reg">
-		<!-- <table class="reg"> -->
-		<h1 class="texto azul bg">REGISTRO DE CUENTA</h1>
-		<!-- <a href="ip.php" target="_blank">Check Ip</a> -->
-		<h3 class="texto cyan sm">ejemplo: usuario@email</h3>
-		<?php error_msg(); ?>
 
-		<label class="texto teal sm" for="mail">E-mail</label>
-		<input id="mail" name="email" type="email" placeholder="username@email" maxlength="35" /><br>
+a
+<script>
+	document.body.style.backgroundImage = "url('../images/bg-images/background.jpg')";
+</script>
+	<body>
 		
-		<label class="texto teal sm" for="pass">Password</label>
-		<input id="pass" name="password" type="password" placeholder="*********" maxlength="30" /><br>
-		
-		<label class="texto teal sm" for="pass2">Confirmar password</label>
-		<input id="pass2" name="password2" type="password" placeholder="*********" maxlength="30" /><br>
-		
-		<input id="captcha" name="captcha" type="hidden" value= <?php echo $texto_aleatorio?> /><br>
-		<input id="captcha_verif" name="captcha_verif" type="hidden" /><br>
 
-
-		<div class="captcha">
-			<label id="selector" class="switch">
-				<input id="check" type="checkbox">
-				<a id="slider" class="slider round" onclick="no_robot()"></a>
-			</label>
-		</div>
-		<input type="submit" class="sbm" value="Registrar" />
-	</form>
+	<?php include "../menu.php";?>
+		
 	
-	<div class="unete">
-		<a href="descargas.php" target="_blank"><img src="images/Unite.gif" width="500" height="300"></a>
+	<div class="container">
+		<form class="formulario" action="<?php echo $_SERVER["PHP_SELF"];?>" method="POST" onsubmit="return checkform(reg);" name="reg">
+			<!-- <table class="reg"> -->
+			<h2 class="texto azul md">REGISTRO DE CUENTA</h2>
+			<!-- <a href="ip.php" target="_blank">Check Ip</a> -->
+			<h3 class="texto cyan sm">ejemplo: usuario@email</h3>
+			<?php error_msg(); ?>
+
+			<label class="texto teal sm" for="mail">E-mail</label>
+			<input class="input" id="mail" name="email" type="email" placeholder="username@email" maxlength="35" /><br>
+			
+			<label class="texto teal sm" for="pass">Contraseña</label>
+			<input class="input" id="pass" name="password" type="password" placeholder="*********" maxlength="30" /><br>
+			
+			<label class="texto teal sm" for="pass2">Re-Contraseña</label>
+			<input class="input" id="pass2" name="password2" type="password" placeholder="*********" maxlength="30" /><br>
+			
+			<input id="captcha" name="captcha" type="hidden" value= <?php echo $texto_aleatorio?> /><br>
+			<input id="captcha_verif" name="captcha_verif" type="hidden" /><br>
+
+			<label class="texto teal sm">Captcha</label>
+			<div class="captcha">
+				<label id="selector" class="switch">
+					<input id="check" type="checkbox">
+					<a id="slider" class="slider round" onclick="no_robot()"></a>
+				</label>
+			</div>
+			<input type="submit" class="sbm" value="Registrar" />
+		</form>
+		
 	</div>
-</div>
-<?php include("pie.php");  ?>
+	<?php include "../pie.php";?>
 </body>
+
+
+	

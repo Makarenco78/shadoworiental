@@ -25,8 +25,8 @@
    <head>
       <title>Monitor IP</title>
 	  <!-- Bootstrap -->
-	  <link rel="stylesheet" href="estilos.css">
-	  <link rel="stylesheet" href="site.css">
+	  <link rel="stylesheet" href="css/estilos.css">
+	  <link rel="stylesheet" href="css/site.css">
    </head>
    <body>
    <header>
@@ -68,6 +68,8 @@
 	
    ?>
    </header>
+
+   <li><a class="texto md rojo-suave" href="./index.php?action=inicio">&#8592 Inicio</a></li>
    </body>
 </div>
 </html>
