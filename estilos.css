@@ -1,0 +1,38 @@
+
+.bg{
+	font-size:2em;
+}
+
+.md{
+	font-size:1.5em;
+}
+
+.sm{
+	font-size:1.2em;
+}
+.esm{
+	font-size:0.03 em;
+}
+
+
+/* transparencia*/
+.fondo{
+	background-color: rgba(25, 20, 41, 0.8);
+}
+
+
+/*colores*/
+.importante{color:#EEA700}
+
+.rojo{color: #800000}
+.verde{color:#228822}
+.azul{color: #00BFFF}
+.negro{color:#000000}
+.blanco{color:#FFFFFF}
+
+.cyan{color: #00FFFF}
+.claro{color:#EEE}
+.rojo-suave{color: #FF3333}
+.ocre{color:#AA5}
+.teal{color:#25A5A5}
+

@@ -1,0 +1,432 @@
+/*
+sitios de interes
+	htmlcolorcodes.com/tutorials/
+	loremipsum.io/
+
+*/
+
+html {
+  height: 100%;
+}
+
+/*body*/
+body{
+	min-height: 101%;
+	background-position:fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin:0;
+	text-shadow:#000 0 0 3px;
+	background-color:#010101;
+}
+
+a{
+	text-decoration:none;
+}
+
+
+img{
+	border:0;
+}
+
+
+.registro{
+	background-image:url("images/bg-images/background.jpg");
+}
+
+.status{
+	background-image:url("images/bg-images/background2.jpg");
+
+}
+.descargas{
+	background-image:url("images/bg-images/background3.jpg");
+}
+
+
+/* grilla */
+.container{
+	display: grid;
+	width:95%;
+	margin:auto;
+	justify-content:center;
+	/* align-items:center; */
+	
+	grid-template-columns: repeat(23, 1fr);
+	grid-template-rows: 100px repeat(20, auto) 100px;
+
+}
+
+/*
+	menu
+*/
+#logo{
+	position: fixed;
+	top:5px;
+	left: 10px;
+	z-index:200;
+	opacity: 0.9;
+}
+
+#logo:hover{
+	opacity: 1;
+}
+
+.menu {
+  position:fixed;
+  width:100%;
+  top:0;
+  list-style-type: none;
+  margin: 0;
+  padding: 10px 0;
+  overflow: hidden;
+  /* background-color: #340000; */
+  background: rgb(255,169,227);
+  background: linear-gradient(90deg, rgba(255,169,227,1) 0%, rgba(108,62,59,1) 0%, rgba(13,13,13,1) 100%);
+  box-shadow: 0 0 15px rgb(13,13,13);
+  z-index:100;
+}
+
+.menu li {
+  float: right;
+}
+
+.menu li:first-child {
+     margin-right: 3%;
+}
+
+.menu li a {
+  display: block;
+  font-family: Helvetica;
+  color: #EEA333;
+  opacity: 0.8;
+  text-align: center;
+  padding: 14px 16px;
+  font-weight:bold;
+  font-size:1.2rem;
+}
+
+.menu li a:hover {
+  opacity: 1;
+}
+
+/* 
+	msj bienvenida
+*/
+#texto1{
+	z-index:200;
+	grid-column:6/20;
+	grid-row: 14/15;
+	margin-top:6em;
+}
+
+#texto2{
+	z-index:200;
+	grid-column:7/19;
+	grid-row: 16/17;
+	margin-top:1em;
+}
+
+/* 
+	video inicio
+*/
+#myVideo{
+	position: fixed;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+	height: 95%;
+	top:50px;
+	left:8%;
+}
+
+/*
+	registro
+*/
+
+
+div #link-descargas{
+	display: block;
+	text-align:center;
+	margin: 30px auto;
+}
+
+.formulario{
+	position: relative;
+	width:100%;
+	height:100%;
+	background-color: rgba(25, 20, 41, 0.8);
+	border-radius:30px;
+	border: 2px solid #FF7733;
+	grid-column: 8/16;
+	grid-row: 4/17;
+}
+
+.formulario label{
+	display: flex;
+	justify-content: center;
+	margin: auto;
+	width:80%;
+}
+	
+.formulario input{
+	display: flex;
+	width:70%;
+	height:auto;
+	padding:13px;
+	background-color:#f7f7f7;
+	color:#454545;
+	border:none;
+	font-size:1.2em;
+	border-radius: 6px;
+	box-shadow: 0 0 3px #000;
+	justify-content: center;
+	margin: 5px auto;
+	}
+
+.formulario input:hover{
+	box-shadow: 0 0 3px #fff;
+	background-color: #E6E6FA;
+	}
+	
+.formulario input:focus{
+	box-shadow: 0 0 3px #fff;
+	background-color: #E6E6FA;
+	}
+	
+.formulario input.sbm{
+	width:60%;
+	height:auto;
+	text-align:center;
+	color:#dfdfdf;
+	background-color: #0077FF;
+	border:0;
+	font-size:1.2em;
+	margin-top:1em;
+	border-radius: 6px;
+	box-shadow: 0 0 1px #CCC;
+
+}	
+	
+.formulario input.sbm:hover{
+	background-color: #99CCFF;
+	box-shadow: 0 0 3px #FFF;
+	color:#3E3E3E;
+}
+
+/*
+	pagina status
+*/
+.tabla{
+	width:100%;
+	background-color: rgba(25, 20, 41, 0.8);
+	border-radius:10px;
+	border: 2px solid #FF7733;
+}
+
+#tabla-topchar{
+	left:2%;
+}
+
+#tabla-online{
+	right:5%;
+}
+
+.tabla th {
+  background: steelblue;
+  height: 3rem;
+  width: 20%;
+  text-shadow: 0 1px 0 #38678f;
+  color: #EEA;
+  font-weight: lighter;
+  border: 1px solid #38678f;
+  box-shadow: inset 0px 1px 2px #568ebd;
+  transition: all 0.2s;
+}
+
+.tabla tr {
+  height: 3rem;
+  width: 25%;
+  text-align: center;
+}
+
+.tabla tr:last-child {
+  border-bottom: 0;
+}
+
+.tabla td {
+  height: 14px;
+  border: 0;
+  border-bottom: 1px solid #568ebd;
+  padding: 1px;
+  transition: all 0.2s;
+  font-weight: lighter;
+}
+.tabla td:last-child {
+  border-right: 0;
+}
+
+/*
+	video presentacion oficial
+*/
+#video-shadow {
+	border: 3px solid #FF7733;
+	border-radius:30px;
+	width:800px;
+	height:500px;
+	margin-top:20px;
+	grid-row: 20/-2;
+}
+
+#frame{
+	width:800px;
+	height:500px;
+
+	border-radius:30px;
+}
+
+
+/* fuentes */
+
+.texto{
+	text-align:center;
+	font-family: Helvetica;
+	font-weight:bold;
+}
+
+	
+.h2, .caption{
+	font-size:1.2em;
+}
+
+.h3{
+	font-size:1em;
+}
+
+.enlace{
+	display:inline;
+	color: #00BFFF;
+	font-family: Helvetica;
+	font-size:1em;
+	text-align:center;
+}
+
+
+div.copy{
+	color:#ccc;
+	font-size:1.2em;
+	font-family:Helvetica;
+	text-align:center;
+	}
+	
+div.errors{
+	color:#f00;
+	font-family:Helvetica;
+	font-size:1.2em;
+	font-weight:bold;
+	text-align:center;
+	}
+
+div#caja{
+	width:50%;
+	display:flex;
+	margin: auto;
+}
+
+.boton {
+  display: inline-block;
+  background-color: #008CBA;
+  width:40%;
+  border-radius:30px;
+  padding:10px;
+  /* text-align: center; */
+  align-items: center;
+  margin-right: 10%;
+  cursor: arrow;
+  border: 2px solid #009EFF;
+  box-shadow: 0 0 1px #ccc;
+  opacity: 0.8;
+  font-family:Helvetica;
+}
+
+.boton:hover {
+	opacity: 1;
+}
+
+
+div.pie{
+	position: fixed;
+	width:100%;
+	padding: 10px 0 20px 0;
+	left:0;
+	bottom:0;
+	color:#555;
+	font-family: Helvetica;
+	font-size:1rem;
+	font-weight:bold;
+	background-color:#000;
+	text-align:center;
+	z-index:200;
+}
+
+div.pie:hover{
+	color:#AAA;
+}
+
+.titulo{
+	position:relative;
+	border-top: 2px solid #FF7733;
+	border-left: 2px solid #FF7733;
+	border-right: 2px solid #FF7733;
+	border-radius:30px 30px 0 0;
+	width: 90ch;
+	grid-column: 5/18;
+	grid-row: 3/6;
+	
+}
+
+
+.articulo {
+	position:relative;
+	border-left: 2px solid #FF7733;
+	border-right: 2px solid #FF7733;
+	border-bottom: 2px solid #FF7733;
+	border-radius:0 0 30px 30px ;
+	width: 90ch;
+	grid-column: 5/18;
+	grid-row: 6/21;
+}
+
+.unete{
+	position:relative;
+	grid-column:8/17;
+	grid-row: 19/24;
+	margin-top:50px;
+}
+
+
+.tabla1{
+	position:relative;
+	width:90%;
+	grid-column: 1/13;
+	grid-row: 3/20;
+}
+
+.tabla2{
+	position:relative;
+	width:90%;
+	grid-column: 13/25;
+	grid-row: 3/20;
+}
+
+.videofi{
+	position:relative;
+	width:100%;
+	height: 100%;
+	grid-column: 7/23;
+	grid-row: auto;
+
+}
+
+.parrafo{
+	font-family:Helvetica;
+	margin-left:50px;
+	margin-right:50px;
+}
