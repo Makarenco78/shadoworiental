@@ -7,10 +7,11 @@
     Experiencia x Quest = 5<br/>
     Experiencia x Kill =  3<br/>
     Experiencia x Descubrir = 2<br/>
-    Profesiones x = 2<br/>          <!-- asi ?-->
+    Profesiones x = 2<br/>          <!-- aca ?--> nono aca mira 
     Experiencia x Fin de Semana = Doble<br/>
 </div>
 <video autoplay muted loop id="myVideo">
     <source src="\images\video\bg-3.mp4" type="video/mp4">
 </video>
 
+ voy a subir los rates de oro , por que para volar cuesta mucho oro 
