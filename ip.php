@@ -47,22 +47,19 @@
 
 	if ($ip == $row['address']){
 		echo "
-		<div class='texto cyan'>
+		<div class='texto cyan center'>
 		<h1>".$domain."</h1>
 		<br/><h2 class='texto cyan'>IP del Server: " .$ip."</h2>
 		<h2>IP RealmList: ".$row['address']."</h2><br/ >";
 		echo "<h2 class='texto cyan'><div class='texto cyan'>LA IP ESTA OK</h2><br />
-		<!-- </h2 class='texto cyan'><h2>Ultima actualizacion<br />".$row['fecha']."</h2> -->
-		
 		<div>";
 	}else{
 		echo "
-		<div class='texto rojo'>
+		<div class='texto rojo center'>
 		<h1>".$domain."</h1>
 		<br/><h2 class='texto rojo'>IP del Server: " .$ip."</h2>
 		<h2 class='texto rojo'>IP RealmList: ".$row['address']."</h2><br/ >";
 		echo "<h2><div class='texto rojo'>LA IP NO ESTA CONFIGURADA</h2><br />
-		<!-- </h2><h2>Ultima actualizacion<br />" .$row['fecha']. "</h2> -->
 		</div>";
 	}
 	

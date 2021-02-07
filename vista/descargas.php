@@ -4,8 +4,8 @@
 </script>
 
 <div class="titulo fondo">
-	<div class="texto azul bg">Wow ShadowOriental</div>
-	<div class="texto azul bg">Instrucciónes para jugar</div>
+	<div class="texto azul bg center">Wow ShadowOriental</div>
+	<div class="texto azul bg center">Instrucciónes para jugar</div>
 </div>
 
 <div class="articulo fondo">
@@ -18,13 +18,13 @@
 	</div>
 	<p class="parrafo claro sm">Las dos opciones contienen el mismo cliente, solo descarga uno.</p>
 	<p class="parrafo claro sm"><b class="importante">Importante</b> Si ya tienes un cliente Shadowlands 9.0.2 ( build 37176)
-		Solo cambia el realmlist a sswow.ddns.net y jugarás sin lag ninguno. El realmlist se encuentra en el archivo config ,dentro de la carpeta WTF
-		de tu cliente full</p>
+		Solo cambia el "portal" a sswow.ddns.net y jugarás sin lag ninguno. El "portal" se encuentra en  el archivo config.wtf, dentro de la carpeta _retail_/WTF
+		de tu cliente full</p> <p class="parrafo ocre sm">SET portal "sswow.ddns.net"</p>
 	<p class="parrafo claro sm">
 		[3] Descomprime el archivo "Client Shadow.rar" en la carpeta que contendrá tu Wow Shadowlands. Luego podrás borrar el archivo "Client Shadow.rar".<br><br>
 		[4] Ingresa y disfruta este gran juego ejecutando el archivo: "Arctium WoW Client Launcher.exe".</p>
 		<p class="parrafo claro sm"><b class="importante">Importante</b> Entrarás a jugar con una versión mínima, sin descargar la totalidad del cliente del Wow Shadowlands. Éste se seguirá descargando mientras juegas.
-		Esto significa que mientras se descargue el cliente experimentes algunos momentos de "lag" mientas se cargan las texturas.</p>
+		Esto significa que mientras se descargue el cliente experimentes algunas demoras mientas se cargan las texturas.</p>
 		<p class="parrafo claro sm">Necesitas 60 Gb de espacio libre en el disco duro para jugar Wow Shadowlands.</p>
 </div>
 

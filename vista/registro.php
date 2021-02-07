@@ -24,7 +24,6 @@ if(!empty($_POST["password"]) && !empty($_POST["password2"]) && !empty($_POST["e
 
 	$conn = mysqli_connect($sql_host, $sql_user, $sql_pass, $sql_account_db) or die("Unable to connect to the database.");
 
-	$post_accountname = mysqli_real_escape_string($conn, trim(strtoupper($_POST["accountname"])));
 	$post_password = mysqli_real_escape_string($conn, trim(strtoupper($_POST["password"])));
 	$post_password2 = trim(strtoupper($_POST["password2"]));
 	$post_email = mysqli_real_escape_string($conn, trim(strtoupper($_POST["email"])));
@@ -67,16 +66,15 @@ if(!empty($_POST["password"]) && !empty($_POST["password2"]) && !empty($_POST["e
 		$field = "\\x" . substr($field,0,-2);
 		return $field;
 	}
-	*/
 	
 	function hex2bin($hexstr) 
     { 
-        $n = strlen($hexstr); 
+		$n = strlen($hexstr); 
         $sbin="";   
         $i=0; 
         while($i<$n) 
         {       
-            $a =substr($hexstr,$i,2);           
+			$a =substr($hexstr,$i,2);           
             $c = pack("H*",$a); 
             if ($i==0){$sbin=$c;} 
             else {$sbin.=$c;} 
@@ -84,9 +82,10 @@ if(!empty($_POST["password"]) && !empty($_POST["password2"]) && !empty($_POST["e
         } 
         return $sbin; 
     } 
+	*/
 	
 	if(!is_array($errors)){
-	
+		
 		$bnet_hashed_pass = strtoupper(bin2hex(strrev(hex2bin(strtoupper(hash('sha256', strtoupper(hash('sha256', strtoupper($post_email)) . ':' . strtoupper($post_password))))))));
 		
 		//insertar cuenta battlenet
