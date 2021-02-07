@@ -175,9 +175,9 @@ a
 	<div class="container">
 		<form class="formulario" action="<?php echo $_SERVER["PHP_SELF"];?>" method="POST" onsubmit="return checkform(reg);" name="reg">
 			<!-- <table class="reg"> -->
-			<h2 class="texto azul md">REGISTRO DE CUENTA</h2>
 			<!-- <a href="ip.php" target="_blank">Check Ip</a> -->
-			<h3 class="texto cyan sm">ejemplo: usuario@email</h3>
+			<h2 class="texto azul md">REGISTRO DE CUENTA</h2>
+			<!--<h3 class="texto cyan sm">ejemplo: usuario@email</h3>-->
 			<?php error_msg(); ?>
 
 			<label class="texto teal sm" for="mail">E-mail</label>
@@ -203,7 +203,7 @@ a
 		</form>
 		
 	</div>
-	<?php include "../pie.php";?>
+	<?php include "pie.php";?>
 </body>
 
 

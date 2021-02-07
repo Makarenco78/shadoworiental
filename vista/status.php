@@ -3,6 +3,7 @@
 	document.body.style.backgroundImage = "url('../images/bg-images/background2.jpg')";
 </script>
 
+
 	<table class="tabla tabla2" id="tabla-online">
 		<caption class="texto sm cyan">
 			Players Online
@@ -86,6 +87,7 @@
 		</tbody>
 	</table>
 
+
 <!-- <div class="container">
 		<div class="serverstats texto sm claro">
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ipsam! Quibusdam, vitae perferendis. Quas consequatur nobis assumenda earum delectus? Amet, sit voluptatibus? Laudantium at minima nulla earum sequi veritatis dolorem!
@@ -116,6 +118,6 @@
 	</div>
 
 	<div class="unete">
-		<a href="../index.php?action=registro"><img src="images/Unite.gif" width="500" height="300"></a>
+		<a href="../vista/registro.php"><img src="images/Unite.gif" width="500" height="300"></a>
 	</div>
 

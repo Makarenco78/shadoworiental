@@ -37,12 +37,10 @@ require("./modelo/config.php");
 			}
 		}else{
 			include "./vista/inicio.php";
-
 		}
-		
 	?>
 	</div>
-	<?php include "pie.php"; ?>
+	<?php include "vista/pie.php"; ?>
 
 </body>
 </html>

@@ -89,7 +89,7 @@ img{
   text-align: center;
   padding: 14px 16px;
   font-weight:bold;
-  font-size:1.2rem;
+  font-size:1em;
 }
 
 .menu li a:hover {
@@ -101,14 +101,14 @@ img{
 */
 #texto1{
 	z-index:200;
-	grid-column:6/20;
+	grid-column:1/25;
 	grid-row: 14/15;
 	margin-top:6em;
 }
 
 #texto2{
 	z-index:200;
-	grid-column:7/19;
+	grid-column:1/25;
 	grid-row: 16/17;
 	margin-top:1em;
 }
@@ -138,15 +138,16 @@ div #link-descargas{
 .formulario{
 	position: relative;
 	width:500px;
-	height:650px;
+	height:550px;
 	justify-content: center;
+	align-items: center;;
 	text-align: center;
 	padding: 20px;
 	margin: auto;
 	background-color: rgba(25, 20, 41, 0.8);
 	border-radius:30px;
 	border: 2px solid #FF7733;
-	grid-column: 7/17;
+	grid-column: 1/25;
 	grid-row: 4/5;
 }
 
@@ -411,16 +412,17 @@ div#caja{
 
 div.pie{
 	position: fixed;
+	display: inline-block;
 	width:100%;
-	padding: 10px 0 20px 0;
+	padding: 5px 0 5px 0;
 	left:0;
 	bottom:0;
 	color:#555;
 	font-family: Helvetica;
-	font-size:1rem;
+	font-size:1em;
 	font-weight:bold;
 	background-color:#000;
-	text-align:center;
+	text-align:space-between;
 	z-index:200;
 }
 
@@ -434,21 +436,32 @@ div.pie:hover{
 	border-left: 2px solid #FF7733;
 	border-right: 2px solid #FF7733;
 	border-radius:30px 30px 0 0;
-	width: 90ch;
-	grid-column: 5/18;
+	width: 700px;
+	justify-content: center;
+	align-items: center;
+
+	padding: 20px;
+	margin: auto;
+
+	grid-column: 1/25;
 	grid-row: 3/6;
 	
 }
 
 
 .articulo {
-	position:relative;
 	border-left: 2px solid #FF7733;
 	border-right: 2px solid #FF7733;
 	border-bottom: 2px solid #FF7733;
 	border-radius:0 0 30px 30px ;
-	width: 90ch;
-	grid-column: 5/18;
+	width: 700px;
+	justify-content: center;
+	align-items: center;
+
+	padding: 20px;
+	margin: auto;
+
+	grid-column: 1/25;
 	grid-row: 6/21;
 }
 
@@ -496,4 +509,29 @@ div.pie:hover{
 	grid-row: 100px repeat(3fr) 100px;
 	grid-column: 3/20;
 
+}
+
+.lista-pie{
+	list-style-type: none;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.lista-pie{
+	list-style-type: none;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.lista-pie>li>a{
+	float:right;
+	margin-right: 20px;
+}
+
+#logo-discord
+{
+	width: 2em;
+	height: 2em;
 }
