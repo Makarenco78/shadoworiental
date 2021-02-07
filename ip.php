@@ -38,7 +38,7 @@
  	
 	if (mysqli_num_rows($result) > 0) {
 			if ($ip != $row['address']){
-				$sql = " UPDATE `realmlist` SET `address` = '". $ip ."' WHERE `id` = '1'";
+				$sql = " UPDATE `realmlist` SET `address`= '". $ip ."', `online`='1' WHERE `id` = '1'";
    				mysqli_query($conn, $sql);
 				mysqli_close($conn);
 				echo exec('start ..\..\core\reset.exe');

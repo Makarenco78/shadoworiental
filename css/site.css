@@ -113,6 +113,13 @@ img{
 	margin-top:1em;
 }
 
+#texto3{
+	z-index:200;
+	grid-column:1/25;
+	grid-row: 18/19;
+	margin-top:3em;
+}
+
 /* 
 	video inicio
 */
@@ -535,3 +542,22 @@ div.pie:hover{
 	width: 2em;
 	height: 2em;
 }
+
+.badge {
+	display: block;
+	width: 60px;
+	text-align: center;
+	border-radius:6px;
+	padding:2px 2px;
+	margin: 15px 40px;
+	align-self: start;
+	font-family:Helvetica;
+  }
+
+  .badge-on{
+	background-color: #006600;
+  }
+
+  .badge-off{
+	background-color: #660000;
+  }

@@ -47,8 +47,13 @@ SVG Icons - svgicons.sparkk.fr
 .svg-icon {
 	width: 2em;
 	height: 2em;
+	opacity: 0.7;
   }
   
+  .svg-icon:hover { 
+  	opacity: 1;
+  }
+
   .svg-icon path,
   .svg-icon polygon,
   .svg-icon rect {
